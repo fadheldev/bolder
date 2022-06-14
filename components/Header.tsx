@@ -16,7 +16,7 @@ const Header = () => {
     return () => {
       router.events.off("routeChangeStart", routeChangeHandler);
     };
-  }, []);
+  }, [router.events]);
 
   return (
     <>

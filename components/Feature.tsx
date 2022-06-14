@@ -1,3 +1,5 @@
+import Image from "next/image";
+
 interface FeatureProps {
   header: string;
   title: string;
@@ -20,7 +22,11 @@ const Feature = ({
   reverse,
 }: FeatureProps) => {
   return (
-    <div className={`flex items-center justify-center w-9/12 mx-auto mt-24 mb-24 lg:mb-0 md:w-9/12 md:h-screen md:items-start md:justify-between ${reverse && "md:flex-row-reverse"}`}>
+    <div
+      className={`flex items-center justify-center w-9/12 mx-auto mt-24 mb-24 lg:mb-0 md:w-9/12 md:h-screen md:items-start md:justify-between ${
+        reverse && "md:flex-row-reverse"
+      }`}
+    >
       <div className="w-full h-full md:w-5/12">
         <p className="mb-8 font-medium uppercase text-stone-400">{header}</p>
         <h1 className="mb-8 font-serif text-2xl font-bold md:text-4xl text-primary-100">
@@ -46,11 +52,16 @@ const Feature = ({
         </button>
       </div>
 
-      <img
-        className="hidden object-contain object-center md:block h-4/6"
-        src={image}
-        alt={alt}
-      />
+      <div className="relative hidden w-2/6 md:block h-4/6">
+        <Image
+          className="hidden"
+          src={image}
+          alt={alt}
+          layout="fill"
+          objectFit="contain"
+          objectPosition="center"
+        />
+      </div>
     </div>
   );
 };

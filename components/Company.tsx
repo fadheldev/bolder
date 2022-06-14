@@ -1,3 +1,5 @@
+import Image from "next/image";
+
 interface CompanyProps {
   name: string;
   logo: string;
@@ -5,11 +7,16 @@ interface CompanyProps {
 
 const Company = ({ name, logo }: CompanyProps) => {
   return (
-    <img
-      className="object-contain object-center mx-1 mb-8 md:mx-3 w-28 grayscale h-14"
-      src={logo}
-      alt={name}
-    />
+    <div className="relative mx-1 mb-8 w-28 h-14 md:mx-3">
+      <Image
+        className="grayscale"
+        src={logo}
+        alt={name}
+        layout="fill"
+        objectFit="contain"
+        objectPosition="center"
+      />
+    </div>
   );
 };
 
