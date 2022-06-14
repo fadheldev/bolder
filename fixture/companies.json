@@ -1,0 +1,48 @@
+{
+  "data": [
+    {
+      "name": "Amazon",
+      "logo": "/images/amazon.jpg"
+    },
+    {
+      "name": "Bloomberg",
+      "logo": "/images/bloomberg.jpg"
+    },
+    {
+      "name": "Google",
+      "logo": "/images/google.jpg"
+    },
+    {
+      "name": "IBM",
+      "logo": "/images/ibm.jpg"
+    },
+    {
+      "name": "Meta",
+      "logo": "/images/meta.jpg"
+    },
+    {
+      "name": "Microsoft",
+      "logo": "/images/microsoft.jpg"
+    },
+    {
+      "name": "Netflix",
+      "logo": "/images/netflix.jpg"
+    },
+    {
+      "name": "Pinterest",
+      "logo": "/images/stripe.jpg"
+    },
+    {
+      "name": "Shopify",
+      "logo": "/images/shopify.jpg"
+    },
+    {
+      "name": "Stripe",
+      "logo": "/images/stripe.jpg"
+    },
+    {
+      "name": "Udacity",
+      "logo": "/images/udacity.jpg"
+    }
+  ]
+}

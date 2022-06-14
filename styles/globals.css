@@ -1,0 +1,13 @@
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+
+* {
+  margin: none;
+  padding: none;
+  /* -webkit-tap-highlight-color: transparent; */
+}
+
+body {
+  background-color: #fffefe;
+}
