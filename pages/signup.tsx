@@ -1,4 +1,5 @@
 import { NextPage } from "next";
+import config from "../config/config.json"
 
 const SignUp: NextPage = () => {
   const handleSubmission = (e: any) => {
@@ -7,7 +8,7 @@ const SignUp: NextPage = () => {
 
   return (
     <div className="box-content flex flex-col items-center justify-center w-1/2 p-10 mx-auto mt-12 border border-gray-200 rounded shadow-sm lg:w-3/12 bg-light-100">
-      <h1 className="mb-8 font-serif text-2xl font-bold md:text-4xl text-primary-100">Bolder</h1>
+      <h1 className="mb-8 font-serif text-2xl font-bold md:text-4xl text-primary-100">{config.name}</h1>
 
       <form onSubmit={handleSubmission} className="flex flex-col items-center justify-center w-full">
         <input className="w-full h-16 pl-2 mb-8 bg-transparent border border-gray-200 rounded outline-none" type="text" placeholder="Email" />

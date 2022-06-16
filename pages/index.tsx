@@ -1,19 +1,21 @@
 import type { NextPage } from "next";
+import { useRouter } from "next/router";
 import Company from "../components/Company";
 import Feature from "../components/Feature";
 import Story from "../components/Story";
-import companies from "../fixture/companies.json";
+import config from "../config/config.json";
 
 const Home: NextPage = () => {
+  const router = useRouter();
+
   return (
     <>
       <main className="w-9/12 mx-auto mt-12">
         <p className="hidden mb-8 text-stone-400 md:block">
           Hello there, Ready to gain new skills?
         </p>
-        <div className="mb-8 font-serif text-3xl font-extrabold md:text-5xl text-primary-100">
-          <h1>Learn new skills</h1>
-          <h1>gain more experience</h1>
+        <div className="max-w-xs mb-8 font-serif text-3xl font-extrabold md:max-w-lg md:text-5xl text-primary-100">
+          {config.slogan}
         </div>
 
         <div className="mb-8 text-sm md:text-base text-stone-400">
@@ -37,7 +39,10 @@ const Home: NextPage = () => {
           </a>
         </div>
 
-        <button className="h-12 mb-4 font-medium text-white rounded shadow-lg bg-aqua-100 w-44">
+        <button
+          onClick={() => router.push("/signup")}
+          className="h-12 mb-4 font-medium text-white rounded shadow-lg bg-aqua-100 w-44"
+        >
           Join for Free
         </button>
         <p className="text-xs md:text-sm text-stone-400">
@@ -52,7 +57,7 @@ const Home: NextPage = () => {
         </p>
 
         <div className="flex flex-wrap w-full max-w-3xl justify-evenly">
-          {companies.data.map((data) => (
+          {config.companies.map((data) => (
             <Company key={data.name} name={data.name} logo={data.logo} />
           ))}
         </div>
@@ -76,68 +81,83 @@ const Home: NextPage = () => {
           </div>
         </div>
 
-        <Feature
-          header="Accessible Learning"
-          title="Find convenient and affordable learning."
-          description="Learning with bolder you can access the course on your smartphone
-              or computer easily with comfortable experience without the need to
-              leave home."
-          list={[
-            "Live Teaching",
-            "Practice and discussion",
-            "Animated learning videos",
-          ]}
-          button="Explore it now"
-          image="/images/models/man-with-headphones.jpg"
-          alt="Person using the App"
-        />
-        <Feature
-          header="Intensive Learning"
-          title="Master new skills with one-one mentorship."
-          description="Platform Bolder also provides live streaming video and chat in
-          realtime with a mentor that you can record easily and quickly."
-          button="Explore it now"
-          image="/images/models/woman-taking-notes.jpg"
-          alt="Person using the App"
-          reverse
-        />
+        {config.features.map(
+          ({
+            header,
+            title,
+            description,
+            list,
+            button,
+            image,
+            alt,
+            reverse,
+          }) => (
+            <Feature
+              header={header}
+              title={title}
+              description={description}
+              list={list}
+              button={button}
+              image={image}
+              alt={alt}
+              reverse={reverse}
+              key={title + header}
+            />
+          )
+        )}
       </div>
 
-      <Story
-        title="Recommended by Crimson"
-        author="William Jacob"
-        description="Senior High School - Crimson"
-        image="/images/models/boy-in-a-vest.jpg"
-        alt="William Jacob"
-        secondaryImage="/images/crimson.jpg"
-        secondaryAlt="Crimson"
-        quote={
-          <>
-            <span className="font-bold">I recommend Bolder</span> to all the
-            students who want to upgrade their skills. It adapts perfectly to
-            their needs, even at rapid growth!
-          </>
-        }
-      />
+      {config.stories.map(
+        ({
+          title,
+          author,
+          description,
+          image,
+          alt,
+          secondaryImage,
+          secondaryAlt,
+          quote,
+        }) => (
+          <Story
+            title={title}
+            author={author}
+            description={description}
+            image={image}
+            alt={alt}
+            secondaryImage={secondaryImage}
+            secondaryAlt={secondaryAlt}
+            key={title + author + description}
+            quote={
+              <>
+                <span className="font-bold">{quote.highlighted}</span>{" "}
+                {quote.rest}
+              </>
+            }
+          />
+        )
+      )}
 
       <div className="flex items-center justify-center py-16 bg-light-400">
         <div className="w-5/6 mx-auto text-center md:w-1/2">
           <h1 className="mb-10 font-serif text-2xl font-bold md:text-4xl text-primary-100">
-            Hello, Ready to get started?
+            {config.jumbotron.title}
           </h1>
           <p className="mb-10 text-sm md:text-base text-neutral-400">
-            Lorem ipsum dolor sit amet consectetur adipisicing elit. Repellat
-            ipsam consectetur debitis odit omnis amet harum sed nihil numquam
-            cum exercitationem, dolorum eaque, quo vero cupiditate sapiente
-            architecto vitae. Aut.
+            {config.jumbotron.description}
           </p>
 
           <div className="flex items-center justify-center">
-            <button className="mr-10 text-sm font-medium text-white rounded shadow-lg md:text-base h-14 bg-aqua-100 w-44">
-              Request a Demo
+            <button
+              onClick={() => router.push(config.jumbotron.buttons.first.link)}
+              className="mr-10 text-sm font-medium text-white rounded shadow-lg md:text-base h-14 bg-aqua-100 w-44"
+            >
+              {config.jumbotron.buttons.first.text}
             </button>
-            <button className="text-sm font-medium border rounded shadow-lg md:text-base h-14 text-aqua-100 border-aqua-100 w-44">
-              Join for Free
+            <button
+              onClick={() => router.push(config.jumbotron.buttons.second.link)}
+              className="text-sm font-medium border rounded shadow-lg md:text-base h-14 text-aqua-100 border-aqua-100 w-44"
+            >
+              {config.jumbotron.buttons.second.text}
             </button>
           </div>
         </div>

@@ -1,0 +1,107 @@
+{
+  "name": "Bolder",
+  "email": "help@bolder.com",
+  "phoneNumber": "+1202-555-0616",
+  "slogan": "Learn new skills gain more experience",
+  "companies": [
+    {
+      "name": "Amazon",
+      "logo": "/images/amazon.jpg"
+    },
+    {
+      "name": "Bloomberg",
+      "logo": "/images/bloomberg.jpg"
+    },
+    {
+      "name": "Google",
+      "logo": "/images/google.jpg"
+    },
+    {
+      "name": "IBM",
+      "logo": "/images/ibm.jpg"
+    },
+    {
+      "name": "Meta",
+      "logo": "/images/meta.jpg"
+    },
+    {
+      "name": "Microsoft",
+      "logo": "/images/microsoft.jpg"
+    },
+    {
+      "name": "Netflix",
+      "logo": "/images/netflix.jpg"
+    },
+    {
+      "name": "Pinterest",
+      "logo": "/images/pinterest.jpg"
+    },
+    {
+      "name": "Shopify",
+      "logo": "/images/shopify.jpg"
+    },
+    {
+      "name": "Stripe",
+      "logo": "/images/stripe.jpg"
+    },
+    {
+      "name": "Udacity",
+      "logo": "/images/udacity.jpg"
+    }
+  ],
+  "features": [
+    {
+      "header": "Accessible Learning",
+      "title": "Find convenient and affordable learning.",
+      "description": "Learning with bolder you can access the course on your smartphone or easily with comfortable experience without the need to leave home.",
+      "button": "Explore now",
+      "image": "/images/models/man-with-headphones.jpg",
+      "alt": "Person using the mobile app",
+      "reverse": false,
+      "list": [
+        "Live Teaching",
+        "Practice and discussion",
+        "Animated learning videos"
+      ]
+    },
+    {
+      "header": "Intensive Learning",
+      "title": "Master new skills with one-one mentorship.",
+      "description": "Platform Bolder also provides live streaming video and chat in realtime with a mentor that you can record easily and quickly.",
+      "button": "Explore now",
+      "image": "/images/models/woman-taking-notes.jpg",
+      "alt": "Person using the mobile app",
+      "reverse": true,
+      "list": []
+    }
+  ],
+  "stories": [
+    {
+      "title": "Recommended by Crimson",
+      "author": "William Jacob",
+      "description": "Senior High School - Crimson",
+      "image": "/images/models/boy-in-a-vest.jpg",
+      "alt": "William Jacob",
+      "secondaryImage": "/images/crimson.jpg",
+      "secondaryAlt": "Crimson Logo",
+      "quote": {
+        "highlighted": "I recommend Bolder",
+        "rest": "to all the students who want to upgrade their skills. It adapts perfectly to their needs, even at rapid growth!"
+      }
+    }
+  ],
+  "jumbotron": {
+    "title": "Hello, Ready to get started?",
+    "description": "We are a team of developers and designers who are passionate about learning. We are here to help you learn new skills and improve your skills.",
+    "buttons": {
+      "first": {
+        "text": "Join for Free",
+        "link": "/signup"
+      },
+      "second": {
+        "text": "Learn More",
+        "link": "/"
+      }
+    }
+  }
+}

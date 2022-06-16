@@ -1,3 +1,5 @@
+import config from "../config/config.json"
+
 const Footer = () => {
   return (
     <footer className="w-10/12 mx-auto my-32">
@@ -52,8 +54,8 @@ const Footer = () => {
           <h3 className="w-full mb-6 text-xl font-bold text-primary-100">
             Contact
           </h3>
-          <p className="mb-4 text-slate-500">+1202-555-0616</p>
-          <p className="text-slate-500">help@bolder.com</p>
+          <p className="mb-4 text-slate-500">{config.phoneNumber}</p>
+          <p className="text-slate-500">{config.email}</p>
         </div>
       </div>
 

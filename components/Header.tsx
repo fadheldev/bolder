@@ -1,6 +1,7 @@
 import Link from "next/link";
 import { useRouter } from "next/router";
 import { useEffect, useState } from "react";
+import config from "../config/config.json"
 
 const Header = () => {
   const router = useRouter();
@@ -24,7 +25,7 @@ const Header = () => {
         <div className="flex items-center justify-between w-full h-6">
           <Link href="/">
             <span className="font-serif text-xl font-extrabold uppercase cursor-pointer text-primary-200">
-              Bolder.
+              {config.name.toUpperCase()}.
             </span>
           </Link>
           <button
